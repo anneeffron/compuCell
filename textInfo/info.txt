@@ -1,0 +1,63 @@
+Welcome to CompuCell3D
+CompuCell3D is a flexible scriptable modeling environment, which allows the rapid construction of sharable Virtual Tissue in-silico simulations of a wide variety of multi-scale, multi-cellular problems including angiogenesis, bacterial colonies, cancer, developmental biology, evolution, the immune system, tissue engineering, toxicology and even non-cellular soft materials. CompuCell3D models have been used to solve basic biological problems, to develop medical therapies, to assess modes of action of toxicants and to design engineered tissues. CompuCell3D intuitive and make Virtual Tissue modeling accessible to users without extensive software development or programming experience.
+
+It uses Cellular Potts Model to model cell behavior. Below is a preview of what CC3D can do:
+
+attachment:CC3D1.gif  attachment:CC3D2.gif
+
+This project is currently funded by generous support from the U.S. National Science Foundation (NSF) and National Institutes of Health (NIH). Grants: NSF- 1720625, “Network for Computational Nanotechnology - Engineered nanoBIO Node” and NIH- R01 GM122424, “Competitive Renewal of Development and Improvement of the Tissue Simulation Toolkit”.
+
+Compucell3D is led by Anwar Shaikh (IU), Maciej Swat (IU) and James Glazier (IU) in collabration with Dr. David Umulis (PU) and team.
+
+
+Want to contribute to CompuCell3D developement?
+We highly encourage fellow researchers to contribute to CompuCell3D code. If you have developed some useful plugin or fuctionality on CompuCell3D and would like share it with rest of us. Please commit the code and open a pull request on CompuCell3D GitHub repository. We would love to see it in next version of CompuCell3D.
+
+
+Have CompuCell3D-related Question?
+Try our new CompuCell3D User Forum. In case you are facing any issue with CompuCell3D installation, we are here to help. Please contact- anshaikh@iu.edu . Problem is often simple to solve, can be resovled in no time.
+
+CompuCell3D User Forum
+
+
+***NEW*** CC3D Version 3.7.8
+We have just uploaded CompuCell3D 3.7.8. Check out our Download page and release notes For your convenience we developed online version of Python Scripting Manual. Make sure to check a tutorial on how to use our new plotting back-end.
+
+Latest News
+13th User Traning Workshop for CompuCell3D 2018
+August 5th - August 11th at Indiana University, Bloomington, IN, USA. See more..
+
+How to cite CompuCell3D
+Multi-Scale Modeling of Tissues Using CompuCell3D – M. Swat, Gilberto L. Thomas, Julio M. Belmonte, A. Shirinifard, D.Hmeljak, J. A. Glazier, Computational Methods in Cell Biology, Methods in Cell Biology 110: 325-366 (2012)
+
+
+New Papers using CompuCell Simulations have been published:
+Computational Model of Secondary Palate Fusion and Disruption
+
+Multi-scale modeling of the CD8 immune response.
+
+Virtual-Tissue Computer Simulations Define the Roles of Cell Adhesion and Proliferation in the Onset of Kidney Cystic Disease
+
+IL-2 sensitivity and exogenous IL-2 concentration gradient tune the productive contact duration of CD8+ T cell-APC: a multiscale modeling study.
+
+Virtual-Tissue Computer Simulations Define the Roles of Cell Adhesion and Proliferation in the Onset of Kidney Cystic Disease
+
+Spheroid Formation of Hepatocarcinoma Cells in Microwells: Experiments and Monte Carlo Simulations
+
+A Computational Model of Peripheral Photocoagulation for the Prevention of Progressive Diabetic Capillary Occlusion
+
+A Liver-Centric Multiscale Modeling Framework for Xenobiotics
+
+Somites Without a Clock
+
+Dynamics of cell aggregates fusion: Experiments and simulations
+
+Synergy of cell–cell repulsion and vacuolation in a computational model of lumen formation
+
+The effects of cell compressibility, motility and contact inhibition on the growth of tumor cell clusters using the Cellular Potts Model
+
+Advances in Modelling of Epithelial to Mesenchymal Transition
+
+
+Latest Announcements
+To receive the latest announcements please join our mailing list
