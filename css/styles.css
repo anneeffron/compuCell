@@ -8,13 +8,15 @@ article {
 h1 {
 
     font-size: 20px;
-    font-family:  'Arial', sans-serif;
+    font-family: 'BentonSansRegular';
+
 }
 
 
 p,li {
     font-size: 18px;
-    font-family:  'Arial', sans-serif;
+    /* font-family:  'Arial', sans-serif; */
+    font-family: 'BentonSansRegular';
 }
 
 p{
