@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CompuCell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+
+    <!--Google Fonts  -->
+            <link href="https://fonts.iu.edu/style.css?family=BentonSans:regular,bold|BentonSansCond:regular|GeorgiaPro:regular" media="screen" rel="stylesheet" type="text/css"/>
+
+    <!-- Stylesheets -->
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <!--Font Awesome   -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="navigation"></div>
+
+<p><b> 1. CompuCell3D crashes on Windows with the following information: </b>Qt has caught an exception thrown from an event handler. Throwing exceptions from an event handler is not supported in Qt. You must reimplement QApplication::notify() and catch all exceptions there. This application has requested the Runtime to terminate it in an unusual way. Please contact the application's support team for more information. </p>
+<p><b>Answer:</b> Try closing CC3D and removing configuration file where CC3D stores its settings. The file location is- <i>your_home_directory - usually c:\users\yourname&gt;\<a  href="/AppData">AppData</a>\Roaming\Biocomplexity\cc3d_default.ini. </i></p>
+<p> After you remove this file run CC3D again.</p>
+<hr/>
+<p><b>2. CompuCell3D does not work after update?</b></p>
+<p><b>Answer: </b>There might be issue while removing old CompuCell3D version while update. In case you can't use CompuCell3D after update, please manually delete CompuCell3D directory which usually at - <i>C:\CompuCell3D </i>for windows. Once directory is removed try reinstalling CompuCell3D.</p>
+</body>
+<script>
+$(function() {
+    $("#navigation").load("nav.html");
+});
+</script>
+</html>
