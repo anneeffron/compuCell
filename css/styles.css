@@ -1,6 +1,6 @@
 article {
     /* border: 2px solid black; */
-    margin-bottom: 35px;
+    margin-bottom: 10px;
     padding: 20px 25px;
 
 }
@@ -8,10 +8,12 @@ article {
 h1 {
 
     font-size: 20px;
-    font-family: 'BentonSansRegular';
-
 }
 
+ h1, h2, h3, a {
+     font-family: 'BentonSansRegular';
+
+ }
 
 p,li {
     font-size: 18px;
@@ -57,8 +59,9 @@ header {
     padding-top: 100px;
     border: 2px solid white;
     position: relative;
-    left: 300px;
-    top: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 img {
     height: 400px;
