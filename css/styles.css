@@ -70,6 +70,12 @@ img {
     margin-left: 150px;
     margin-right: 10px;
 }
+table {
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid black
+}
 .gifs {
     display: flex;
     flex-direction: row;
