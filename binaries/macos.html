@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!--
+		Anne Effron
+		Redesign the CompuCell website
+-->
+
+    <head>
+    	<meta charset="utf-8">
+    	<title>CompuCell</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+
+    	<!--Google Fonts  -->
+
+        <link href="https://fonts.iu.edu/style.css?family=BentonSans:regular,bold|BentonSansCond:regular|GeorgiaPro:regular" media="screen" rel="stylesheet" type="text/css"/>
+
+    	<!-- Stylesheets -->
+    	<link href="../css/styles.css" rel="stylesheet" type="text/css" media="all">
+    	<!--Font Awesome   -->
+        	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+        <!--Javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    </head>
+
+
+<body>
+    <div id="navigation"></div>
+<article>
+
+<p>To install CC3D on OSX you first need to make sure that you download CC3D binary package that is appropriate for your OSX version. We follow fairly simple naming convention for binary packages: </p>
+
+<p> To install CC3D on <b>OSX 10.9</b> please use tha package which has </p>
+
+<p> MacOSX_10.9 </p>
+
+<p> in its name. For example for CC3D 3.7.2 the package can be called: </p>
+
+CC3D_3.7.2_MacOSX_10.9_20140310.zip
+</article>
+
+<article>
+<p> <b>Remark:</b> Bionet-Solver does not work on <b>OSX 10.9</b>. We strongly recommend that you consider using SBML-Solver which is much better and way easier to use SBML tool for CC3D simulations than Bionet-Solver. To get started with SBML-Solver please see Python Scripting Manual for CompuCell3D 3.7.2 </p>
+
+<p>To install CC3D on <b>OSX 10.8</b> please use tha package which has</p>
+
+<p>MacOSX_10.8 </p>
+
+<p>in its name. For example for CC3D 3.7.2 the package can be called:</p>
+
+<p> CC3D_3.7.2_MacOSX_10.8_20140310.zip </p>
+
+<p> To install CC3D on <b> OSX 10.6 or  10.7 </b>please use tha package which has </p>
+
+<p> MacOSX_10.6 </p>
+
+<p> in its name. For example for CC3D 3.7.2 the package can be called: </p>
+
+<p> CC3D_3.7.2_MacOSX_10.6_20140310.zip </p>
+
+<p> <b>Remark: </b> The 10.6 binary os 64 bit binary so if you happen to have 32 bit processor you shuld think about upgrading to newer machine. </p>
+
+<p><b>Please note that we do not support OSX previous to 10.6</b></p>
+
+<h1>Detailed Installation Guide for OSX </h1>
+<ul>
+    <li> Obtain binary file appropriate for your OSX distribution (see explanation above) . In my case I am using OSX 10.9 hence I am downloading CC3D_3.7.2_MacOSX_10.9_20140310.zip
+
+<img src="OSXInstallBinaries.jpg" alt="osx_binary install.jpg"/>
+
+</li>
+    <li> Save file in the Downloads directory
+
+<img src="OSXInstallBinaries.png" alt="save_cc3d_binary.png"/> </li>
+
+    <li> open up terminal and cd to Downloads directory by typing
+
+<p> cd ~/Downloads </p> </li>
+
+<li> copy CC3D package to your home directory
+
+<p> cp CC3D_3.7.2_MacOSX_10.9_20140310.zip ~/ </p> </li>
+
+<p>Please note that you need to replace CC3D_3.7.2_MacOSX_10.9_20140310.zip with the name of the package you downloaded</p>
+
+    <li> go to home directory by typing </li>
+
+<p> cd ~ </p>
+
+<p> or </p>
+
+<p> cd .. </p>
+
+    <li> unzip the package </li>
+
+<p> unzip CC3D_3.7.2_MacOSX_10.9_20140310.zip </p>
+
+<img src="OSXInstallBinaries-1.png" alt="console_osx_1.png" />
+
+<li> finally after the unzipping is done, cd to the directory with new CC3D install </li>
+
+<p> cd CC3d_3.7.2 </p>
+
+<li> run CompuCell3D </li>
+
+<p> ./compucell3d.command </p>
+
+<li> to test CC3D run <b>Demos/SBMLSolverExamples/SBMLSolverOscillatorDemo/SBMLSolverOscillatorDemo.cc3d</b> . The screenshot should look similar to the picture below: </li>
+
+    <img src="OSXInstallBinaries-2.png" alt="cc3d_sbml_osx.png" />
+
+
+
+
+""</body>
+
+<script>
+$(function() {
+    $("#navigation").load("../nav2.html");
+});
+</script>
+</html>

@@ -10,7 +10,6 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
     <link href="https://fonts.iu.edu/style.css?family=BentonSans:regular,bold|BentonSansCond:regular|GeorgiaPro:regular" media="screen" rel="stylesheet" type="text/css" />
 
-
     <!--Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -26,120 +25,111 @@
             - AllAnswered</a>.
         <p> Usually, it is an minor issue that can be solved easily. </p>
         <h2> ***NEW*** CC3D Version 3.7.8</h2>
-        <h3 id="New_Features">New Features</h3>
+        <h3>New Features</h3>
 
         <ul>
             <li>Python parameter Steering via Interactive Sliders
             <li>Multiple Bug Fixes</li>
         </ul>
+        <img src="images/SrcBin.png" alt="image" />
 
-        <p><a href="/SrcBin?action=AttachFile&amp;do=view&amp;target=sliders_cc3d.png" title="{{attachment:sliders_cc3d.png|attachment:sliders_cc3d.png|width=&quot;200&quot;}}">
-                <img alt="attachment:sliders_cc3d.png" src="/SrcBin?action=AttachFile&amp;do=get&amp;target=sliders_cc3d.png" title="attachment:sliders_cc3d.png" /> </a>
-            <p><b>IMPORTANT:</b> This is a release candidate. It is fully functional new version of CompuCell3D. Before making it an official release we want to give users an opportunity to try it on their machines and report any bugs on our Q&amp;A
-                page: <a href="https://www.allanswered.com/community/s/compucell3d/">CC3D - AllAnswered</a> </p>
+        <!-- <p><a href="/SrcBin?action=AttachFile&amp;do=view&amp;target=sliders_cc3d.png" title="{{attachment:sliders_cc3d.png|attachment:sliders_cc3d.png|width=&quot;200&quot;}}">
+                <img alt="attachment:sliders_cc3d.png" src="/SrcBin?action=AttachFile&amp;do=get&amp;target=sliders_cc3d.png" title="attachment:sliders_cc3d.png" /> </a> -->
+        <p><b>IMPORTANT:</b> This is a release candidate. It is fully functional new version of CompuCell3D. Before making it an official release we want to give users an opportunity to try it on their machines and report any bugs on our Q&amp;A
+            page: <a href="https://www.allanswered.com/community/s/compucell3d/">CC3D - AllAnswered</a> </p>
 
-            <h2>Binary distribution packages:</h2>
-            <p><strong>Windows - 32-bit and 64-bit</strong>
+        <h2>Binary distribution packages:</h2>
+        <p><b>Windows - 32-bit and 64-bit</b>
 
-                <p><b>IMPORTANT</b>: If after installation of new CC3D you encounter problems on Windows. Please manually remove the directory where CC3D is installed and try using installer
-                    again. This is a one-time inconvenience associated with the transition to the new ways of storing Player settings. You may also need to remove _settings.sqlite file in the Simulation subfolder of the cc3d project folder </p>
-                <ul>
-                    <li>
-                        CompuCell3D 3.7.8 - Windows <a href="http://www.sourceforge.net/projects/cc3d/files/3.7.8/windows/">Download</a>
-                    </li>
-                </ul>
-                <p><b>Note:</b> If CC3D does not run properly on your machine with NVidia card you can try non-gpu version of the binaries - in this case get setup-no-gpu-xxx.exe file. xxx stands for version number and revision number of current
-                    CC3D: </p>
-                <p><strong>Mac OS X - binaries</strong>
-                    <p><a href="/SrcBin/OSXInstallBinaries">Installation Instructions for Mac OSX Binaries</a>
+            <p><b>IMPORTANT</b>: If after installation of new CC3D you encounter problems on Windows. Please manually remove the directory where CC3D is installed and try using installer
+                again. This is a one-time inconvenience associated with the transition to the new ways of storing Player settings. You may also need to remove _settings.sqlite file in the Simulation subfolder of the cc3d project folder </p>
+            <ul>
+                <li>
+                    CompuCell3D 3.7.8 - Windows <a href="http://www.sourceforge.net/projects/cc3d/files/3.7.8/windows/">Download</a>
+                </li>
+            </ul>
+            <p><b>Note:</b> If CC3D does not run properly on your machine with NVidia card you can try non-gpu version of the binaries - in this case get setup-no-gpu-xxx.exe file. xxx stands for version number and revision number of current
+                CC3D: </p>
+            <p><b>Mac OS X - binaries</b>
+                <p><a href="binaries/macos.html">Installation Instructions for Mac OSX Binaries</a></p
+                    <ul>
+                        <li>
+                            CompuCell3D 3.7.8 - Mac OS X <a href="https://sourceforge.net/projects/cc3d/files/3.7.8/mac/">Download</a>
+                        </li>
+                    </ul>
+                    <p><b>Linux</b>
+                        <p>We are providing binaries for 64 bit Ubuntu and RedHat </p>
                         <ul>
                             <li>
-                                CompuCell3D 3.7.8 - Mac OS X <a href="https://sourceforge.net/projects/cc3d/files/3.7.8/mac/">Download</a>
+                                CompuCell3D 3.7.8 - Linux (Ubuntu / RedHat ) <a href="http://sourceforge.net/projects/cc3d/files/3.7.8/linux/">Download</a>
                             </li>
                         </ul>
-                        <p><strong>Linux</strong>
-                            <p>We are providing binaries for 64 bit Ubuntu and RedHat </p>
-                            <ul>
-                                <li>
-                                    CompuCell3D 3.7.8 - Linux (Ubuntu / RedHat ) <a class="http" href="http://sourceforge.net/projects/cc3d/files/3.7.8/linux/">Download</a>
-                                </li>
-                            </ul>
-                            <p>Most Linux users choose to compile cc3d from source. Please take a look at our tutorials: </p>
-                            <ul>
-                                <li>
-                                    Building and installing 3.7.8 from source on Ubuntu Linux is easily done by following our <a href="/SrcBin/LinuxCompile">Ubuntu Linux step-by-step
-                                        tutorial</a> or <a href="/SrcBin/LinuxCompileRedHat6">RedHat/CentOS tutorials</a>.
-                                </li>
-                                <li>
-                                    You may also try conda-based installation method <a href="/SrcBin/CompilingOnLinux2017">Conda-based installation</a>
-                                </li>
-                            </ul>
-                            <h2>Previous Version - CC3D 3.7.7</h2>
-                            <h3>New Features</h3>
-                            <ul>
-                                <li>Improved handling of Player settings - based on SQLite database
-                                    <ul>
-                                        <li>
-                                            <em>NOTE: If Twedit++ or Compucell3D crashes when trying to run an old xxx.cc3d setup file then delete the <b>_settings.xml</b>file from the <b>Simulation </b>directory. </em></li>
-                                    </ul>
-                                </li>
-                                <li>Significantly faster connectivity plugin that works in 2D , 3D and on any type of lattice</li>
-                                <li>Multiple bug-fixes </li>
-                            </ul>
+                        <p>Most Linux users choose to compile cc3d from source. Please take a look at our tutorials: </p>
+                        <ul>
+                            <li>
+                                Building and installing 3.7.8 from source on Ubuntu Linux is easily done by following our <a href="/SrcBin/LinuxCompile">Ubuntu Linux step-by-step
+                                    tutorial</a> or <a href="/SrcBin/LinuxCompileRedHat6">RedHat/CentOS tutorials</a>.
+                            </li>
+                            <li>
+                                You may also try conda-based installation method <a href="/SrcBin/CompilingOnLinux2017">Conda-based installation</a>
+                            </li>
+                        </ul>
+                        <h2>Previous Version - CC3D 3.7.7</h2>
+                        <h3>New Features</h3>
+                        <ul>
+                            <li>Improved handling of Player settings - based on SQLite database
+                                <ul>
+                                    <li>
+                                        <em>NOTE: If Twedit++ or Compucell3D crashes when trying to run an old xxx.cc3d setup file then delete the <b>_settings.xml</b>file from the <b>Simulation </b>directory. </em></li>
+                                </ul>
+                            </li>
+                            <li>Significantly faster connectivity plugin that works in 2D , 3D and on any type of lattice</li>
+                            <li>Multiple bug-fixes </li>
+                        </ul>
 
-                            <h3>Binary distribution packages:</h3>
+                        <h3>Binary distribution packages:</h3>
 
-                            <p><b>Windows - 32-bit and 64-bit</b> </p>
-                            <p><b>IMPORTANT</b>: If after installation of new CC3D you encounter problems on Windows. Please manually remove the directory where
-                                CC3D is installed and try using installer again. This is a one-time inconvenience associated with the transition to the new ways of storing Player settings.
-                                You may also need to remove _settings.sqlite file in the Simulation subfolder of the .cc3d project folder </p>
-                            <ul>
-                                <li>
-                                    CompuCell3D 3.7.7 - Windows <a href="http://sourceforge.net/projects/cc3d/files/3.7.7/windows/">Download</a>
-                                </li>
-                            </ul>
-                            <p><b>Note:</b> If CC3D does not run properly on your machine with NVidia card you can try non-GPU version of the binaries - in
-                                this case get setup-no-gpu-xxx.exe file. xxx stands for version number and revision number of current CC3D: </p>
-                            <p><strong>Mac OS X - binaries</strong> </p>
-                            <p><a href="/SrcBin/OSXInstallBinaries">Installation Instructions for Mac OSX Binaries</a></p>
-                            <ul>
-                                <li>
-                                    CompuCell3D 3.7.7 - Mac OS X <a class="http" href="http://sourceforge.net/projects/cc3d/files/3.7.7/mac/">Download</a>
+                        <p><b>Windows - 32-bit and 64-bit</b> </p>
+                        <p><b>IMPORTANT</b>: If after installation of new CC3D you encounter problems on Windows. Please manually remove the directory where
+                            CC3D is installed and try using installer again. This is a one-time inconvenience associated with the transition to the new ways of storing Player settings.
+                            You may also need to remove _settings.sqlite file in the Simulation subfolder of the .cc3d project folder </p>
+                        <ul>
+                            <li>
+                                CompuCell3D 3.7.7 - Windows <a href="http://sourceforge.net/projects/cc3d/files/3.7.7/windows/">Download</a>
+                            </li>
+                        </ul>
+                        <p><b>Note:</b> If CC3D does not run properly on your machine with NVidia card you can try non-GPU version of the binaries - in
+                            this case get setup-no-gpu-xxx.exe file. xxx stands for version number and revision number of current CC3D: </p>
+                        <p><b>Mac OS X - binaries</b> </p>
+                        <p>Installation Instructions for Mac OSX Binaries</p>
+                        <ul>
+                            <li>
+                                CompuCell3D 3.7.7 - Mac OS X <a href="http://sourceforge.net/projects/cc3d/files/3.7.7/mac/">Download</a>
 
-                                </li>
-                            </ul>
-                            <p><b>Linux</b> </p>
-                            <p>Most Linux users choose to compile cc3d from source. Please take a look at our tutorials: </p>
-                            <ul>
-                                <li>
-                                    Building and installing 3.7.7 from source on Ubuntu Linux is easily done by following our <a href="/SrcBin/LinuxCompile">Ubuntu
-                                        Linux step-by-step tutorial</a> or <a href="/SrcBin/LinuxCompileRedHat6">RedHat/CentOS tutorials</a>.
-                                </li>
-                            </ul>
-                            <p>We will provide binaries for 64 bit Ubuntu (14.04 and 16.04), <a href="/RedHat">RedHat</a> CentOS soon </p>
+                            </li>
+                        </ul>
+                        <p><b>Linux</b> </p>
+                        <p>Most Linux users choose to compile cc3d from source. Please take a look at our tutorials: </p>
+                        <ul>
+                            <li>
+                                Building and installing 3.7.7 from source on Ubuntu Linux is easily done by following our <a href="/SrcBin/LinuxCompile">Ubuntu
+                                    Linux step-by-step tutorial</a> or <a href="/SrcBin/LinuxCompileRedHat6">RedHat/CentOS tutorials</a>.
+                            </li>
+                        </ul>
+                        <p>We will provide binaries for 64 bit Ubuntu (14.04 and 16.04), <a href="/RedHat">RedHat</a> CentOS soon </p>
 
-                            <hr />
+                        <hr />
 
-                            <h2> Need older release?</h2>
+                        <h2> Need older release?</h2>
 
-                            <p><a href="/SrcBinOldReleases">Old releases</a> </p>
-                            </div>
-                            <p lang="en" dir="ltr">SrcBin (last edited 2018-09-12 03:41:25 by <span title="mswat @ 8.42.76.55[8.42.76.55]"><a class="nonexistent" href="/mswat" title="mswat @ 8.42.76.55[8.42.76.55]">mswat</a></span>)</p>
+                        <p><a href="/SrcBinOldReleases">Old releases</a> </p>
 
 
-
-                            <p>Maintained by <a href='http://iub.edu'>IU</a> and the <a href='http://biocomplexity.indiana.edu/'> Biocomplexity Institute</a></p>
-                            <br>CC3D<sup>&reg;</sup>
-                                and <img src='/moin_static197/cc3dnew/img/logo_trans.png' width="16" height="16" /> <p>The CompuCell 3D Environment<sup>&reg;</sup> logo</a> are
-                                registered trademarks.</p>
-
-
-
-                            <script>
-                                $(function() {
-                                    $("#navigation").load("nav.html");
-                                });
-                            </script>
 </body>
+<script>
+    $(function() {
+        $("#navigation").load("nav.html");
+    });
+</script>
 
 </html>
