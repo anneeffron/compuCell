@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!--
+		Anne Effron
+		Redesign the CompuCell website
+-->
+
+<head>
+    <meta charset="utf-8">
+    <title>CompuCell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+
+    <!--Google Fonts  -->
+
+    <link href="https://fonts.iu.edu/style.css?family=BentonSans:regular,bold|BentonSansCond:regular|GeorgiaPro:regular" media="screen" rel="stylesheet" type="text/css" />
+
+    <!-- Stylesheets -->
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <!--Font Awesome   -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+</head>
+
+
+<body>
+    <div id="navigation"></div>
+    <article>
+        <p> Building CompuCell3D on Red Hat Enterprise Linux 6 and CentOS 6= Building CompuCell3D from source on Unix/Linux systems is fairly straightforward once all of it's dependencies have been satisfied. The following commands should build and
+            install CC3D on RHEL 6 systems. </p>
+        <h1> Prerequisites </h1>
+        <p><b> Hardware </b></p>
+        <p>CompuCell3D may build and run with less capable hardware, but has been tested with the following:</p>
+        <ul>
+            <li> 1024MB RAM </li>
+            <li> Hardware 3D Graphics Acceleration (most modern graphics cards) </li>
+        </ul>
+        <p><b>Build Tools and Dependencies </p></b>
+        <p>we will assume that you have already installed Software Developer Workstation Package Group from Red Hat 6 distribution. Typically when you install RHEL 6 you have a choice of the package groups and Software Developer Workstation is one
+            of such groups. If you talk to your sys-admin they can certainly help you install this package set. RHEL ships with Python 2.6 by default and CC3D runs best with Python 2.7. Therefore we will build CC3D based on Miniconda Python
+            distribution from Continuum Analytics.</p>
+        <p>Using miniconda package manager we will install </p>
+        <ul>
+            <li> pyqt4</li>
+            <li> numpy </li>
+            <li> scipy </li>
+            <li> vtk </li>
+        </ul>
+        <p>This will save us a lot of time compared to the manual compilation of those packages. </p>
+
+        <p>CompuCell3D requires also the following packages to be present: </p>
+        <ul>
+            <li>swig </li>
+            <li>cmake</li>
+            <li>PyQwt</li>
+            <li>QScintilla (with python bindings)</li>
+            <li>pcre-devel</li>
+        </ul>
+        <p>We will install those packages either using <b>yum</b> package manager or will compile them from source. </p>
+
+        <p>Let's start with the easy part first <b>-swig</b> and <b>cmake</b> installation. Open a terminal and become root by typing :</p>
+
+        <div class="git">
+            <p>su -</p>
+        </div>
+        <p>enter your root password and type the following: </p>
+        <div class="git">
+            <p> yum install cmake-gui swig pcre-devel</p>
+        </div>
+        <p> Now let's install miniconda - here I will choose to perform a local installation i.e. I will install it in my home directory. First let's get appropriate package - by visiting <a href="http://conda.pydata.org/miniconda.html">
+                http://conda.pydata.org/miniconda.html </a> <br>
+            and choosing Python 2.7 64-bit installer. Navigate to your download directory and make the downloaded script executable : </p>
+        <div class="git">
+            <p>chmod +x Miniconda2-latest-Linux-x86_64.sh </p>
+        </div>
+        <p> After that, run the installation by typing from your download directory </p>
+        <div class="git">
+            <p> ./Miniconda2-latest-Linux-x86_64.sh </p>
+        </div>
+        <img src="CondaRHEL6_001.png" alt="img1" />
+        <p>Towards the end of the installation you will be asked if you want the installer script to add path to miniconda Python distribution to the <b>PATH</b> environment variable. I recommend you say <b>yes.</b></p>
+
+    <img src="CondaRHEL6_002.png" alt="img2" />
+    <p> If you change your mind you can always open <b>.bashrc </b> script and remove path to miniconda. Adding path to miniconda python will make it your default Python and this is a good thing on a system that ships with obsolete version of Python. Additionally installing additional Python packages using miniconda toolset is super easy. So let's do it- I will show you how to install pyqt, numpy vtk, and scipy using miniconda. I assume that if you type </p>
+    <div class="git"><p> conda </p></div>
+<p>you will get <b>conda</b> usage help. If not then for the reminder of presented installation steps you will need to specify full path to the <b>conda</b> program. <br>
+
+Let's install the required dependencies now: </p>
+
+<div class="git"><p> conda install pyqt numpy scipy vtk  </p></div>
+
+<img src="CondaRHEL6_003.png" alt="img3" />
+<p>Answer <b>yes</b> if <b>conda</b> asks whether to install the dependencies, wait few minutes and you will have most of cc3d dependencies needed to run CC3D on your machine. </p>
+<img src="CondaRHEL6_004.png" alt="img4" />
+<p> To check if everything went OK open a terminal and type </p>
+<div class="git"> <p> python </p> </div>
+<p> followed by </p>
+<div class="git"> <p> from PyQt4 import QtCore </p></div>
+<p> The output should look as shown below: </p>
+<img src="RHEL6_001.png" alt="img5" />
+<p>Now we will need to compile two packages </p>
+<ul>
+
+<li> QScintilla (with Python bindings) - needed by CC3D player and Twedit++ </li>
+<li> PyQwt 5.2.0 (needed for plotting capabnilities within Player) </li>
+</ul>
+<p> Let's start with QScintilla. First let's navigate to QScintilla download page - <a href="https://www.riverbankcomputing.com/software/qscintilla/download"> https://www.riverbankcomputing.com/software/qscintilla/download</a> </p>
+
+<p> We will get source code tarball for Linux. The installation instructions are in <a href=" http://pyqt.sourceforge.net/Docs/QScintilla2/"> http://pyqt.sourceforge.net/Docs/QScintilla2/ </a>
+
+<br>and I suggest you follow them. But first let's make sure that you are picking the correct installation of the Qt. You want qt bundled with miniconda. To make sure this is the case type </p>
+<div class="git"><p> qmake --version </p></div>
+<p> The output should show that indeed your shell sees qt version bundled with miniconda:  </p>
+<img src="CondaRHEL6_005.png" alt="img4" />
+<p>If this is not the case simply prepend path to miniconda's <b>bin</b> directory to your <b>PATH</b> environment variable. <br>
+
+If everything works as follows you should be able to follow the installation instructions for QScintilla"</p>
+
+<div class="git">
+<p>cd Qt4Qt5 <br>
+qmake qscintilla.pro <br>
+make <br>
+make install </p>
+</div>
+
+<p>After QScintilla is build we will build python bindings for it. Assuming we are in the Qscintilla source main directory we would type </p>
+<div class="git"> <p>
+cd Python <br>
+python configure.py<br>
+make<br>
+make install </p>
+</div>
+
+
+
+<p>At this point we should have QScintilla and Python bindings to it installed on our machine
+
+Now let's look at the installation of plotting library PyQwt-5.2.0
+
+You get it from <a href="https://sourceforge.net/projects/pyqwt/files/pyqwt5/PyQwt-5.2.0/PyQwt-5.2.0.tar.gz/download"> https://sourceforge.net/projects/pyqwt/files/pyqwt5/PyQwt-5.2.0/PyQwt-5.2.0.tar.gz/download </a>
+
+Unpack it and go to the unpacked PyQwt folder
+
+You should be able to follow the installation instructions shown here - <a href="http://pyqwt.sourceforge.net/doc5/installation.html">http://pyqwt.sourceforge.net/doc5/installation.html </a>
+
+Here is my console window showing basis steps of PyQwt installation: </p>
+
+<img src="CondaRHEL6_006.png" alt="img6" /><br>
+<img src="CondaRHEL6_007.png" alt="img7" />
+<p> One thing you have to be aware of here. There is a small bug in the PyQwt source code. Fortunately it is very easy to fix. Here we go - navigate to PyQwt installation folder located inside miniconda folder. In my case since miniconda was installed in </p>
+<div class="git"><p> /home/m/miniconda2 </p></div>
+<p> the folder I am looking for is</p>
+<div class="git"><p> /home/m/miniconda2/lib/python2.7/site-packages/PyQt4/Qwt5 </p></div>
+<p> We will fix anynumpy.py script as follows - we will replace original code (I am shogin only first part of the file- look for lines following if name =='numpy': ) </p>
+<div class="git">
+    <p> # import either NumPy, or numarray, or Numeric <br>
+
+for name in ('numpy', 'numarray', 'Numeric'):<br>
+    &emsp;failed = False <br>
+    &emsp;try:<br>
+             &emsp;&ensp;eval(compile('from %s import *' % name, 'eval', 'exec'))<br>
+         &emsp;&ensp;if name == 'numpy':<br>
+             &emsp;&emsp;from numpy.oldnumeric.compat import *<br>
+             &emsp;&emsp;Float = float<br>
+             &emsp;&emsp;UInt8 = uint8<br>
+    &emsp;except ImportError:<br>
+        &emsp;&ensp;failed = True<br>
+    &emsp;if not failed:<br>
+        &emsp;&ensp;break </p></div>
+<p> with</p>
+
+<div class="git"> <p>
+    &emsp;for name in ('numpy', 'numarray', 'Numeric'):<br>
+    &emsp;failed = False<br>
+    &emsp;try:<br>
+         &emsp;&ensp;eval(compile('from %s import *' % name, 'eval', 'exec'))<br>
+         &emsp;&ensp;if name == 'numpy':<br>
+             &emsp;&emsp;pass<br>
+             &emsp;&emsp;#from numpy.oldnumeric.compat import *<br>
+             &emsp;&emsp;#Float = float<br>
+             &emsp;&emsp;#UInt8 = uint8<br>
+    &emsp;except ImportError:<br>
+        &emsp;&ensp;failed = True<br>
+    &emsp;if not failed:<br>
+        &emsp;&ensp;break </p></div>
+        </article>
+<p> If you prefer downloading the fixed file , you can do it by clicking here <br>
+
+At this point we are done with the dependencies</p>
+<h1> Source Code </h1>
+<p> Once the dependencies have been satisfied make directory where you want to store source code, in my case it is in <b>/home/m/CC3D_GIT</b></p>
+<div class="git"> <p>mkdir /home/m/CC3D_GIT<br>
+cd /home/m/CC3D_GIT </p> </div>
+<p> Once the directory has been created, obtain the source code from our GIT repository using the following command: </p>
+<div class="git"><p> git clone  https://github.com/CompuCell3D/CompuCell3D.git . </p></div>
+<p>This will clone CC3D Git repository into current directory (remember about the . at the end of last command - it is important) </p>
+<h1> Build Configuration: Starting CMake </h1>
+<p> CompuCell3D is configured using the CMake build system. The following command starts the CMake GUI: </p>
+<div class="git"><p>cmake-gui </p></div>
+<p>
+    That will start the build system. Having miniconda is in your <b>PATH</b> environment variable will help locate the dependencies . Click Browse Source... and select the <b>CompuCell3D</b> source directory from the CompuCell3D GIT directory we have created above - in my case the CompuCell3D source directory is located in <b>/home/m/CC3D_GIT/CompuCell3D</b>
+
+In addition to specifying source directory we also specify the location of the build directory i.e. a directory where compilation files will be stored. in my case it is <b>/home/m/CC3D_GIT_build/CompuCell3D</b>
+</p>
+<img src="cmake02.jpg" alt="img8" />
+<p> We are ready to click Configure. A dialog box asking to create the build directory will appear:</p>
+<img src="cmake03.jpg" alt="img9" />
+<p> and then one asking about the build system: </p>
+<img src="cmake04.jpg" alt="img9" />
+<p> Select Unix Makefiles for the generator, select Use default native compilers and then click Finish. CMake will begin the configuration process. CMake will attempt to locate all of the dependencies installed above. <br>
+After the initial configuration has completed select Grouped and Advanced to make entering configuration values easier.</p>
+<h1>Build Configuration: CMAKE </h1>
+<p> In CMAKE confirm that CMake has located all the build tools. In the CMAKE_BUILD_TYPE field you may enter Debug, RelWithDebInfo or Release to specify the type of the binary you want to have - if you are developing extra modules compiling in the Debug or RelWithDebInfo can be helpful. By default Compucell3D build type is set to Release: </p>
+<img src="CondaRHEL6_008.png" alt="img10" />
+
+<p> In the CMAKE_INSTALL_PREFIX field enter the directory you would like to install CompuCell3D into - this is important. We recommend that unless necessary you should install CC3D into local directory - in my case it is <b>/home/m/CC3D_install </b>, .<br>
+
+Click on Configure to have all the values updated. <br>
+
+<b>IMPORTANT</b> CMake will try to locate all the dependencies and Python is one of the dependencies. Alas, CMake script that locates Python distribution (Python executable, library and header directory) mixes different Python distributions if you have more than one Python distribution on your system. Therefore it is important to fix the appropriate paths in the cmak-gui before proceeding further. To do this. Check <b>Advanced</b> box, and in the search line next to the box type <b>python</b> and you will see the following Python dependencies listed: </p>
+<img src="CondaRHEL6_009.png" alt="img11" />
+<p> As you can see Python executable comes from miniconda distribution while library and header files come from system-default Python (which is obsolete 2.6 edition). We need to fix it, specifying paths to the directory containing Python.h file and the path to the python library. In my case those are /home/m/miniconda2/include/python2.7 and /home/m/miniconda2/lib/libpython2.7.so respectively - see screenshot below </p>
+<img src="CondaRHEL6_010.png" alt="img12" />
+<p> After this fix we can move further - click on Configure and then click on Generate to generate the Makefiles, ignore any warnings. Exit CMake </p>
+<img src="CondaRHEL6_011.png" alt="img13" />
+<h1> Building </h1>
+<p>To begin compiling CompuCell3D enter the build directory specified in the Where to build the binaries field of CMake earlier and use the following command: <br>
+
+In my case I type: </p>
+<div class="git"><p> cd /home/m/CC3D_GIT_build/CompuCell3D
+make </p></div>
+<img src="cmake07.jpg" alt="img14" />
+<p> After the build begins you may see screen like this one: </p>
+<img src="cmake08.jpg" alt="img15" />
+<h1> Installing </h1>
+<p> Once compiling has completed CompuCell3D can be installed into the directory specified in the CMAKE_INSTALL_PREFIX field earlier by issuing the following command: </p>
+<div class="git"><p>make install</p></div>
+<img src="cmake09.jpg" alt="img16" />
+<h1> Running </h1>
+<p>After CompuCell3D has finished installing you can start CompuCell3D by entering the installation directory (in my case it is in <b>/home/m/CC3D_install</b>): </p>
+
+<div class="git"><p>cd /home/m/CC3D_install </p></div>
+<p> and issuing the following command:</p>
+<div class="git>"><p> ./compucell3d.sh </p></div>
+<img src="cmake10.jpg" alt="img17" />
+</body>
+
+<script>
+    $(function() {
+        $("#navigation").load("../nav2.html");
+    });
+</script>
+
+</html>

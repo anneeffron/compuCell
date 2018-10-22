@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<!--
+		Anne Effron
+		Redesign the CompuCell website
+-->
+
+    <head>
+    	<meta charset="utf-8">
+    	<title>CompuCell</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+
+    	<!--Google Fonts  -->
+
+        <link href="https://fonts.iu.edu/style.css?family=BentonSans:regular,bold|BentonSansCond:regular|GeorgiaPro:regular" media="screen" rel="stylesheet" type="text/css"/>
+
+    	<!-- Stylesheets -->
+    	<link href="../css/styles.css" rel="stylesheet" type="text/css" media="all">
+    	<!--Font Awesome   -->
+        	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+        <!--Javascript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    </head>
+
+
+<body>
+    <div id="navigation"></div>
+<article>
+<h1> Building CompuCell3D on Linux </h1>
+
+<p>Building CompuCell3D from source on Unix/Linux systems is fairly straightforward once all of it's dependencies have been satisfied. The following commands should build and install CC3D on most Unix/Linux systems. </p>
+<h1> Prerequisites </h1>
+<p><b> Hardware </b></p>
+<ul>
+    <li> 512MB RAM </li>
+    <li> Hardware 3D Graphics Acceleration (most modern graphics cards)  </li>
+</ul>
+<p><b> Build Tools and Dependencies for PyQt4 </b></p>
+<p> In addition to the common Unix/Linux build tools, interpreters and, libraries, building and running CompuCell3D requires:  </p>
+<ul>
+    <li> Qt (version 4.6 or higher recommended) </li>
+
+<li> PyQt (with OpenGL modules) </li>
+<li>SWIG (version 1.3 or higher recommended)</li>
+<li>VTK (with Python wrappers, version 5.4 or higher recommended)</li>
+<li>Qwt (and PyQwt, version 4.2 or higher recommended)</li>
+<li>QScintilla (version 1.7 or higher recommended)</li>
+<li>CMake (CMake-GUI is recommended)</li>
+<li>Python (version 2.6 or higher recommended)</li>
+</ul>
+
+
+<p> <b>Build Tools and Dependencies for PyQt5</b> </p>
+
+<p>In addition to the common Unix/Linux build tools, interpreters and, libraries, building and running CompuCell3D requires: </p>
+<ul>
+    <li>Qt (version 5.6 or higher recommended) </li>
+
+<li>PyQt5 (with OpenGL modules)  </li>
+<li>SWIG (version 1.3 or higher recommended) </li>
+<li>VTK (with Python wrappers, version 6.3 or higher recommended) </li>
+<li>pyqtgraph (version 0.10.0 or higher recommended) </li>
+<li>QScintilla (version 2.9 or higher recommended) </li>
+<li>CMake (CMake-GUI is recommended) </li>
+<li>Python (version 2.7 )  </li>
+
+</ul>
+
+<p>When building CC3D 3.7.6 or higher we suggest you use PyQt5 dependencies (PyQt4 will also work but then you will have to change PYQT_VERSION in CMake to 4, because PYQT_VERSION=5 is a default in CMAKE) </p>
+
+<p> On Debian distributions, for PyQt5-based CC3D builds the following command should install all the required dependencies: </p>
+
+<div class="git"> <p>sudo apt-get install g++ swig cmake-gui python-numpy python-pyqt5 python-pyqt5.qsci python-pyqt5.qtopengl python-pyqt5.qtsvg libvtk6-dev python-vtk6 python-dev libxml2-dev build-essential git </p> </div>
+
+<p> to get plots working you may need to install pyqtgraph </p>
+
+<div class="git"><p> pip install pyqtgraph  </p></div>
+
+<p> For PyQt4 based-builds the following command should install all the required dependencies (to change PYQT_VERSION in CMake to 4 when using PyQt4): </p>
+
+<div class="git"><p> sudo apt-get install libvtk5-qt4-dev g++ swig libqwt5-qt4-dev python-qt4 python-qscintilla2 cmake-gui python-qt4-gl python-vtk python-qwt5-qt4 python-dev libxml2-dev build-essential git</p></div>
+
+<h1> Source Code </h1>
+
+<p> Once the dependencies have been satisfied make directory where you want to store source code, in my case it is in <b>/home/m/CC3D_GIT </b></p>
+
+<p><b>Please note that we do not support OSX previous to 10.6</b></p>
+
+<h1>Detailed Installation Guide for OSX </h1>
+<ul>
+    <li> Obtain binary file appropriate for your OSX distribution (see explanation above) . In my case I am using OSX 10.9 hence I am downloading CC3D_3.7.2_MacOSX_10.9_20140310.zip
+
+<img src="OSXInstallBinaries.jpg" alt="osx_binary install.jpg"/>
+
+</li>
+    <li> Save file in the Downloads directory
+
+<img src="OSXInstallBinaries.png" alt="save_cc3d_binary.png"/> </li>
+
+    <li> open up terminal and cd to Downloads directory by typing
+
+<p> cd ~/Downloads </p> </li>
+
+<li> copy CC3D package to your home directory
+
+<p> cp CC3D_3.7.2_MacOSX_10.9_20140310.zip ~/ </p> </li>
+
+<p>Please note that you need to replace CC3D_3.7.2_MacOSX_10.9_20140310.zip with the name of the package you downloaded</p>
+
+    <li> go to home directory by typing </li>
+
+<p> cd ~ </p>
+
+<p> or </p>
+
+<p> cd .. </p>
+
+    <li> unzip the package </li>
+
+<p> unzip CC3D_3.7.2_MacOSX_10.9_20140310.zip </p>
+
+<img src="OSXInstallBinaries-1.png" alt="console_osx_1.png" />
+
+<li> finally after the unzipping is done, cd to the directory with new CC3D install </li>
+
+<p> cd CC3d_3.7.2 </p>
+
+<li> run CompuCell3D </li>
+
+<p> ./compucell3d.command </p>
+
+<li> to test CC3D run <b>Demos/SBMLSolverExamples/SBMLSolverOscillatorDemo/SBMLSolverOscillatorDemo.cc3d</b> . The screenshot should look similar to the picture below: </li>
+
+    <img src="OSXInstallBinaries-2.png" alt="cc3d_sbml_osx.png" />
+
+
+
+
+</body>
+
+<script>
+$(function() {
+    $("#navigation").load("../nav2.html");
+});
+</script>
+</html>

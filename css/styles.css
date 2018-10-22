@@ -83,7 +83,11 @@ table, th, td {
     display: flex;
     flex-direction: row;
 }
-.papers {
-    /* display: flex; */
+.git {
+    background-color: #f0ece6;
+    color:  #990000;
+    padding-left: 5px;
+    padding-top: .5px;
+}
 
 }
